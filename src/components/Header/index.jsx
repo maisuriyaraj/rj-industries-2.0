@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import resume from '../../assets/resume/Raj-Maisuriya-Resume.pdf';
+import menu from '../../assets/images/menu.svg';
 import './index.css'
 
 export default function Header() {
@@ -73,6 +74,7 @@ export default function Header() {
                                         <a
                                             href={resume}
                                             download
+                                            onClick={() => toggleNav()}
                                             className="cursor-pointer rounded bg-[#0095ff] py-[6px] px-[12px] font-medium text-white drop-shadow-sm sm:bg-hero-gradient-start"
                                         >
                                             Download CV
@@ -87,7 +89,7 @@ export default function Header() {
                                         <img
                                             alt="ICON"
                                             className='img-filter'
-                                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgMjAuMjIyOUM3LjEwNDU3IDIwLjIyMjkgOCAxOS4zNDMgOCAxOC4yNTc1QzggMTcuMTcyIDcuMTA0NTcgMTYuMjkyIDYgMTYuMjkyQzQuODk1NDMgMTYuMjkyIDQgMTcuMTcyIDQgMTguMjU3NUM0IDE5LjM0MyA0Ljg5NTQzIDIwLjIyMjkgNiAyMC4yMjI5WiIgZmlsbD0iIzQwQkE3NyIvPgo8cGF0aCBkPSJNMzEgMTcuMjc0OUgxMUMxMC40NDc3IDE3LjI3NDkgMTAgMTcuNzE0OSAxMCAxOC4yNTc2VjE5LjI0MDRDMTAgMTkuNzgzMSAxMC40NDc3IDIwLjIyMzEgMTEgMjAuMjIzMUgzMUMzMS41NTIzIDIwLjIyMzEgMzIgMTkuNzgzMSAzMiAxOS4yNDA0VjE4LjI1NzZDMzIgMTcuNzE0OSAzMS41NTIzIDE3LjI3NDkgMzEgMTcuMjc0OVoiIGZpbGw9IiM0MEJBNzciLz4KPHBhdGggZD0iTTMxIDI0LjE1NDNINUM0LjQ0NzcyIDI0LjE1NDMgNCAyNC41OTQzIDQgMjUuMTM3VjI2LjExOThDNCAyNi42NjI1IDQuNDQ3NzIgMjcuMTAyNSA1IDI3LjEwMjVIMzFDMzEuNTUyMyAyNy4xMDI1IDMyIDI2LjY2MjUgMzIgMjYuMTE5OFYyNS4xMzdDMzIgMjQuNTk0MyAzMS41NTIzIDI0LjE1NDMgMzEgMjQuMTU0M1oiIGZpbGw9IiM0MEJBNzciLz4KPHBhdGggZD0iTTMxIDkuNDEzMDlINUM0LjQ0NzcyIDkuNDEzMDkgNCA5Ljg1MzA3IDQgMTAuMzk1OFYxMS4zNzg2QzQgMTEuOTIxMyA0LjQ0NzcyIDEyLjM2MTMgNSAxMi4zNjEzSDMxQzMxLjU1MjMgMTIuMzYxMyAzMiAxMS45MjEzIDMyIDExLjM3ODZWMTAuMzk1OEMzMiA5Ljg1MzA3IDMxLjU1MjMgOS40MTMwOSAzMSA5LjQxMzA5WiIgZmlsbD0iIzQwQkE3NyIvPgo8L3N2Zz4K"
+                                            src={menu}
                                             height={43}
                                             width={43}
                                         />

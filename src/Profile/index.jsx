@@ -188,7 +188,7 @@ export default function Profile() {
                                 <h2 className="text-xl md:text-2xl font-semibold">Description</h2>
                                 <div className="rounded-lg max-w-4xl mx-auto mt-8">
                                     <h1 className="text-2xl font-bold text-gray-800 mb-4">
-                                        Raj - Junior Full Stack Developer
+                                        Raj - Full Stack Developer
                                     </h1>
                                     <h2 className="text-xl font-semibold text-gray-800 mb-2">
                                         Technologies in I can work on:
