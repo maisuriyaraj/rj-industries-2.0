@@ -26,10 +26,10 @@ export default function Portfolio() {
     },[]);
     const projects = [
         {
-            name: "QuickLending",
+            name: "Finance Webapp",
             video: QL,
             techs: [angular, bootstrap],
-            description: "Quicklending is a USA based Finance Company that Provides Loans to their customers. All the Process of Loan is Completely Online. QuickLending Frontend is handled by me.",
+            description: "This Platform is a USA based Finance Company that Provides Loans to their customers. All the Process of Loan is Completely Online. QuickLending Frontend is handled by me.",
             projectLink: "https://www.quicklending.com/",
             // productionUrl : "https://www.quicklending.com/"
         },
