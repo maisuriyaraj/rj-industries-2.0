@@ -12,11 +12,14 @@ import css from '../assets/images/css.png';
 import tailwind from '../assets/images/tailwindcss.svg';
 import bootstrap from '../assets/images/bootstrap.svg';
 import constantsys from '../assets/images/constantsys_logo.jpeg';
+import myProfile from '../assets/images/me.webp';
 
 export default function Profile() {
 
-    useEffect(()=>{
-        window.scrollTo({top:0,behavior:'smooth'});    },[]);
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
 
     let skills = [
         {
@@ -83,11 +86,15 @@ export default function Profile() {
 
                     {/* Profile Info Section */}
                     <div className="p-4 md:p-6">
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div className="flex flex-col">
                             <div>
                                 <h2 className="text-xl md:text-2xl font-semibold">Raj Maisuriya</h2>
                                 <p className="text-gray-500 text-sm"><i className="bi bi-geo-fill text-red-600 text-xl"></i>Surat, Gujarat, India</p>
                                 <p className="text-gray-600 text-sm">React JS | Angular | Next JS | Node JS Developer</p>
+                            </div>
+
+                            <div className="bg-white rounded-lg shadow-lg w-full md:w-1/4 p-4">
+                                <img src={myProfile} className='object-cover' alt="" />
                             </div>
 
                         </div>
@@ -186,7 +193,7 @@ export default function Profile() {
                         <div className="w-full">
                             <div>
                                 <h2 className="text-xl md:text-2xl font-semibold">Description</h2>
-                                <div className="rounded-lg max-w-4xl mx-auto mt-8">
+                                <div className="rounded-lg max-w-4xl mx-0 mt-8">
                                     <h1 className="text-2xl font-bold text-gray-800 mb-4">
                                         Raj - Full Stack Developer
                                     </h1>
@@ -240,13 +247,10 @@ export default function Profile() {
 
                 {/* Right Section: Side Info */}
                 <div className="bg-white rounded-lg shadow-lg w-full md:w-1/4 p-4">
-                    {/* Profile Language Section */}
                     <div className="mb-4">
                         <h3 className="text-gray-700 font-semibold text-sm md:text-base">Communication languages</h3>
                         <p className="text-gray-500 text-sm">English and Hindi</p>
                     </div>
-
-                    {/* Public Profile URL Section */}
                     <div className="mb-4">
                         <h3 className="text-gray-700 font-semibold text-sm md:text-base">LinkedIn profile & URL</h3>
                         <a href="https://www.linkedin.com/in/raj-maisuriya-671274237" className="text-blue-600 text-sm">
@@ -262,13 +266,13 @@ export default function Profile() {
                     <div className="mb-4">
                         <h3 className="text-gray-700 font-semibold text-sm md:text-base">Github</h3>
                         <a href="https://github.com/maisuriyaraj" className="text-blue-600 text-sm">
-                        https://github.com/maisuriyaraj
+                            https://github.com/maisuriyaraj
                         </a>
                     </div>
                     <div className="mb-4">
                         <h3 className="text-gray-700 font-semibold text-sm md:text-base">My Youtube</h3>
                         <a href="https://www.youtube.com/@111_MaisuriyaRaj" className="text-blue-600 text-sm">
-                        https://www.youtube.com/@111_MaisuriyaRaj
+                            https://www.youtube.com/@111_MaisuriyaRaj
                         </a>
                     </div>
                     <div className="mb-4">
@@ -284,10 +288,9 @@ export default function Profile() {
                             +91 76238 70030
                         </a>
                     </div>
-                    
                     <div className='mb-4'>
                         <Link
-                        to={'/portfolio'}
+                            to={'/portfolio'}
                             className="w-full cursor-pointer rounded bg-[#0095ff] py-[10px] px-[12px] font-medium text-white drop-shadow-sm sm:bg-hero-gradient-start"
                         >
                             Portfolio Projects
