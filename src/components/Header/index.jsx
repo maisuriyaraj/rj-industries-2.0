@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import resume from '../../assets/resume/Raj-Maisuriya-Resume.pdf';
+import resume from '../../assets/resume/resume-2025.pdf';
 import menu from '../../assets/images/menu.svg';
 import './index.css'
 

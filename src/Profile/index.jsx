@@ -12,7 +12,8 @@ import css from '../assets/images/css.png';
 import tailwind from '../assets/images/tailwindcss.svg';
 import bootstrap from '../assets/images/bootstrap.svg';
 import constantsys from '../assets/images/constantsys_logo.jpeg';
-import myProfile from '../assets/images/me.webp';
+import zluck from '../assets/images/zluck.png';
+import myProfile from '../assets/images/me2.webp';
 
 export default function Profile() {
 
@@ -69,20 +70,6 @@ export default function Profile() {
                 {/* Left Section: Main Profile */}
                 <div className="bg-white rounded-lg shadow-lg w-full md:w-3/4 mb-4 md:mb-0 md:mr-6" >
                     {/* Banner Section */}
-                    <div className="relative">
-                        {/* <img
-                            src="https://via.placeholder.com/800x200" // Placeholder for Banner Image
-                            alt="Banner"
-                            className="w-full h-32 md:h-48 object-cover rounded-t-lg"
-                        /> */}
-                        {/* <div className="absolute -bottom-12 left-8">
-                            <img
-                                src={me} // Placeholder for Profile Picture
-                                alt="Profile"
-                                className="w-32 h-32 rounded-full border-4 border-white"
-                            />
-                        </div> */}
-                    </div>
 
                     {/* Profile Info Section */}
                     <div className="p-4 md:p-6">
@@ -94,9 +81,8 @@ export default function Profile() {
                             </div>
 
                             <div className="bg-white rounded-lg shadow-lg w-full md:w-1/4 p-4">
-                                <img src={myProfile} className='object-cover' alt="" />
+                                <img src={myProfile} className='object-cover rounded-md' alt="" />
                             </div>
-
                         </div>
                     </div>
 
@@ -181,7 +167,31 @@ export default function Profile() {
                                         <p className="text-sm text-gray-600">
                                             Constantsys
                                         </p>
-                                        <p className="text-sm text-gray-600">May-2023 - Present . 1 yr 5 mos</p>
+                                        <p className="text-sm text-gray-600">May-2023 - Nov-2024 . 1 yr 5 mos</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className="w-full lg:w-[50%]">
+                            <div>
+                                <div className="mt-4 flex items-center space-x-4 p-4 bg-white shadow-md rounded-lg">
+                                    {/* University Logo */}
+                                    <img
+                                        src={zluck}
+                                        alt="Company Logo"
+                                        className="w-16 h-16 object-contain"
+                                    />
+
+                                    {/* University and Course Info */}
+                                    <div>
+                                        <h2 className="text-lg font-bold text-gray-800">
+                                            React JS/Next Js Developer
+                                        </h2>
+                                        <p className="text-sm text-gray-600">
+                                            Zluck Solutions
+                                        </p>
+                                        <p className="text-sm text-gray-600">Dec-2024 - Present</p>
                                     </div>
                                 </div>
 
@@ -227,14 +237,14 @@ export default function Profile() {
                                     <ul className="list-disc list-inside text-gray-600 mb-6">
                                         <li>Ready to work for 40 Hours Per Week.</li>
                                         <li>Daily Update on your Project.</li>
-                                        <li>Meeting Deadline Efficiently.</li>
+                                        {/* <li>Meeting Deadline Efficiently.</li> */}
                                     </ul>
                                     <p className="text-gray-600">
                                         I am Providing Services on Front-End Development, Website, Responsive Design, ReactJS, Next.js,
                                         TypeScript, HTML5, CSS3, SCSS, Bootstrap, Material-UI, JavaScript, Tailwind
                                         CSS, Redux, React Bootstrap, Website Redesign, Web Application, E-commerce
                                         Website, Back-End Development, MERN stack, MongoDB, Express.js, React.js,
-                                        Node.js, Next.js, API Design, SQL, .
+                                        Node.js, Next.js, API Design .
                                     </p>
                                     <p className="text-gray-800 font-bold mt-8">Warm Regards,</p>
                                     <p className="text-gray-800 font-bold">Raj Maisuriya</p>
