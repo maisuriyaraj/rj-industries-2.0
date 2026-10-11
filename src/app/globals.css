@@ -1,1 +1,181 @@
 @import 'tailwindcss';
+
+/* Theme is driven by data-theme on <html>, set before paint by the inline script in layout.tsx. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --grid: rgb(15 23 42 / 0.06);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --brand: #0095ff;
+  --brand-strong: #0068c9;
+  --on-brand: #ffffff;
+  --layer-ui: #0e7490;
+  --layer-api: #b45309;
+  --layer-data: #4f46e5;
+  --success: #15803d;
+  --danger: #b91c1c;
+  --shadow: 0 1px 2px rgb(15 23 42 / 0.06), 0 8px 24px rgb(15 23 42 / 0.06);
+  --header-h: 64px;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b1120;
+  --surface: #111827;
+  --surface-2: #1e293b;
+  --border: #1f2a3d;
+  --grid: rgb(148 163 184 / 0.07);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --brand: #38b2ff;
+  --brand-strong: #7cc8ff;
+  --on-brand: #04121f;
+  --layer-ui: #22d3ee;
+  --layer-api: #fbbf24;
+  --layer-data: #818cf8;
+  --success: #4ade80;
+  --danger: #f87171;
+  --shadow: 0 0 0 1px rgb(148 163 184 / 0.08), 0 8px 32px rgb(0 0 0 / 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-fg: var(--text);
+  --color-muted: var(--text-muted);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-on-brand: var(--on-brand);
+  --color-layer-ui: var(--layer-ui);
+  --color-layer-api: var(--layer-api);
+  --color-layer-data: var(--layer-data);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --shadow-card: var(--shadow);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-logo: var(--font-audiowide), var(--font-inter), sans-serif;
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --animate-fade-up: fade-up 250ms var(--ease-out-soft) both;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--brand) 30%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand-strong);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Faint blueprint grid used behind the hero and diagrams. */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-strong);
+  }
+
+  /* Scroll reveal: only hides content once JS has marked <html class="js">,
+     so the page is fully readable without JavaScript. */
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 400ms var(--ease-out-soft),
+      transform 400ms var(--ease-out-soft);
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes glow-drift {
+  0%,
+  100% {
+    transform: translate3d(-10%, -6%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) scale(1.1);
+  }
+}
+
+@keyframes grid-pan {
+  to {
+    background-position: 32px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
