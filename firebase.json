@@ -18,7 +18,7 @@
         "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
       },
       {
-        "source": "**/*.html",
+        "source": "{/,**/!(*.*),**/*.html}",
         "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
       },
       {

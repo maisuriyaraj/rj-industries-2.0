@@ -36,3 +36,4 @@ next-env.d.ts
 
 # original (unoptimised) media, see scripts/optimize-media.mjs
 /media-src/
+firebase-debug.log*
