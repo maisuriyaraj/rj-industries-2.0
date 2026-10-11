@@ -130,7 +130,7 @@
       opacity 400ms var(--ease-out-soft),
       transform 400ms var(--ease-out-soft);
   }
-  .js [data-reveal].is-visible {
+  .js [data-reveal][data-revealed] {
     opacity: 1;
     transform: none;
   }

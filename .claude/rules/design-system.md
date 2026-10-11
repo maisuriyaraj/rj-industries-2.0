@@ -26,6 +26,7 @@ Every text/background pair is AA in both themes. Re-check contrast if you change
 - Cards: `rounded-2xl border border-line bg-surface shadow-card`. Chips: `components/ui/TechIcon` → `TechBadge`.
 - Buttons: `components/ui/Button` (`ButtonLink`, `ButtonAnchor`, `buttonClass()` with `primary` / `secondary` / `ghost`).
 - `.bg-blueprint` is the faint grid background. `animate-fade-up` is the enter animation.
+- Scroll reveal: add `data-reveal`; `RevealObserver` marks it `data-revealed`. Never switch it to a class, because React rewrites `className` on re-render and the element would hide again.
 
 ## Theme
 - `data-theme` on `<html>` is set before paint by `headScript` in `src/lib/theme.ts` (system preference, then remembered choice in `localStorage`).
