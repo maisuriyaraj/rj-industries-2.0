@@ -12,7 +12,7 @@ const rings: Ring[] = [
     items: [
       { id: 'nextjs', angle: 20, color: 'text-layer-ui' },
       { id: 'react', angle: 140, color: 'text-layer-ui' },
-      { id: 'typescript', angle: 260, color: 'text-layer-ui' },
+      { id: 'redux', angle: 260, color: 'text-layer-ui' },
     ],
   },
   {
@@ -21,7 +21,7 @@ const rings: Ring[] = [
     items: [
       { id: 'fastify', angle: 80, color: 'text-layer-api' },
       { id: 'sequelize', angle: 200, color: 'text-layer-data' },
-      { id: 'postgresql', angle: 320, color: 'text-layer-data' },
+      { id: 'mysql', angle: 320, color: 'text-layer-data' },
     ],
   },
 ];

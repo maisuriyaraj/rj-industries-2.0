@@ -27,8 +27,8 @@ export function Hero() {
             <TypedRole roles={site.heroRoles} />
           </div>
           <p className="mt-5 max-w-xl text-lg text-muted">
-            I build products end to end: Next.js and TypeScript interfaces, Fastify APIs, and PostgreSQL data modelled
-            with Sequelize. Right now that means OrbitOps, a multi-tenant SaaS CRM.
+            I build products end to end: Next.js and TypeScript interfaces, Fastify APIs, and SQL data modelled with
+            Sequelize. Right now that means OrbitOps, a multi-tenant SaaS CRM.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/projects/orbitops">

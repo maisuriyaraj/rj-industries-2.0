@@ -17,10 +17,12 @@ import {
   siRedux,
   siRender,
   siSequelize,
+  siShadcnui,
   siSocketdotio,
   siTailwindcss,
   siTypescript,
   siVercel,
+  siZod,
   type SimpleIcon,
 } from 'simple-icons';
 
@@ -46,7 +48,9 @@ export type TechId =
   | 'git'
   | 'firebase'
   | 'vercel'
-  | 'render';
+  | 'render'
+  | 'zod'
+  | 'shadcn';
 
 export type Tech = { id: TechId; name: string; icon: SimpleIcon };
 
@@ -73,4 +77,6 @@ export const tech: Record<TechId, Tech> = {
   firebase: { id: 'firebase', name: 'Firebase', icon: siFirebase },
   vercel: { id: 'vercel', name: 'Vercel', icon: siVercel },
   render: { id: 'render', name: 'Render', icon: siRender },
+  zod: { id: 'zod', name: 'Zod', icon: siZod },
+  shadcn: { id: 'shadcn', name: 'shadcn/ui', icon: siShadcnui },
 };

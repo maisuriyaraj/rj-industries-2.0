@@ -17,11 +17,11 @@ export const roles: Role[] = [
     company: 'RJ Industries',
     title: 'Founder, OrbitOps',
     points: [
-      'Building OrbitOps, a multi-tenant SaaS CRM, end to end.',
-      'Next.js and TypeScript front end; Fastify, Sequelize and PostgreSQL API.',
-      'Master Admin role that oversees every tenant workspace.',
+      'Building OrbitOps, a multi-tenant SaaS CRM: one Fastify API serving two Next.js panels.',
+      'Auth with scope-separated JWTs and rotating refresh tokens, covered by 33 automated tests.',
+      'Leads Kanban and contacts for companies, plus an operator console for onboarding, plans and trial bookings.',
     ],
-    tech: ['nextjs', 'typescript', 'fastify', 'sequelize', 'postgresql'],
+    tech: ['nextjs', 'react', 'redux', 'fastify', 'sequelize', 'mysql'],
   },
   {
     company: 'Zluck Solutions',

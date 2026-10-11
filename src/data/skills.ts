@@ -10,18 +10,20 @@ export type Skill = { tech: TechId; category: SkillCategory; level: SkillLevel; 
 export const skillCategories: SkillCategory[] = ['Frontend', 'Backend', 'Database', 'Tools'];
 
 export const skills: Skill[] = [
-  { tech: 'nextjs', category: 'Frontend', level: 'Daily', usedFor: 'App Router apps at Zluck and the OrbitOps dashboard' },
+  { tech: 'nextjs', category: 'Frontend', level: 'Daily', usedFor: 'Zluck projects and both OrbitOps panels' },
   { tech: 'react', category: 'Frontend', level: 'Daily', usedFor: 'Component-driven UIs since 2023' },
-  { tech: 'typescript', category: 'Frontend', level: 'Daily', usedFor: 'Typed UI and API code across OrbitOps' },
+  { tech: 'typescript', category: 'Frontend', level: 'Daily', usedFor: 'Typed React, Next.js and Node code' },
   { tech: 'tailwind', category: 'Frontend', level: 'Daily', usedFor: 'Design tokens and responsive layouts' },
+  { tech: 'redux', category: 'Frontend', level: 'Comfortable', usedFor: 'Redux Toolkit state in both OrbitOps panels' },
   { tech: 'html', category: 'Frontend', level: 'Daily', usedFor: 'Semantic, accessible markup' },
-  { tech: 'fastify', category: 'Backend', level: 'Comfortable', usedFor: 'The OrbitOps REST API, plugins and hooks' },
+  { tech: 'fastify', category: 'Backend', level: 'Comfortable', usedFor: 'The OrbitOps API: a Fastify 5 modular monolith' },
   { tech: 'node', category: 'Backend', level: 'Comfortable', usedFor: 'APIs, scripts and real-time services' },
-  { tech: 'postgresql', category: 'Database', level: 'Comfortable', usedFor: 'Relational data for multi-tenant OrbitOps' },
-  { tech: 'sequelize', category: 'Database', level: 'Comfortable', usedFor: 'Models, associations and migrations' },
+  { tech: 'mysql', category: 'Database', level: 'Comfortable', usedFor: 'The OrbitOps database: 18 models, 19 migrations' },
+  { tech: 'postgresql', category: 'Database', level: 'Comfortable', usedFor: 'Relational data modelling and SQL' },
+  { tech: 'sequelize', category: 'Database', level: 'Comfortable', usedFor: 'Models, associations and versioned migrations' },
   { tech: 'git', category: 'Tools', level: 'Daily', usedFor: 'Branching, reviews and open-source work' },
   { tech: 'firebase', category: 'Tools', level: 'Comfortable', usedFor: 'Hosting this portfolio' },
   { tech: 'vercel', category: 'Tools', level: 'Comfortable', usedFor: 'Deploying Next.js projects' },
 ];
 
-export const alsoWorkedWith: TechId[] = ['angular', 'redux', 'express', 'mongodb', 'mysql', 'socketio', 'bootstrap', 'mui', 'render'];
+export const alsoWorkedWith: TechId[] = ['angular', 'express', 'mongodb', 'socketio', 'bootstrap', 'mui', 'render'];

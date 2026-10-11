@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  keywords: ['Raj Maisuriya', 'full-stack developer', 'Next.js', 'TypeScript', 'React', 'Fastify', 'Sequelize', 'PostgreSQL', 'OrbitOps', 'Surat'],
+  keywords: ['Raj Maisuriya', 'full-stack developer', 'Next.js', 'TypeScript', 'React', 'Fastify', 'Sequelize', 'PostgreSQL', 'MySQL', 'OrbitOps', 'Surat'],
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
@@ -66,7 +66,7 @@ const personJsonLd = {
   image: `${site.url}/media/about/raj.webp`,
   address: { '@type': 'PostalAddress', addressLocality: 'Surat', addressRegion: 'Gujarat', addressCountry: 'IN' },
   worksFor: { '@type': 'Organization', name: 'Zluck Solutions' },
-  knowsAbout: ['Next.js', 'React', 'TypeScript', 'Fastify', 'Sequelize', 'PostgreSQL'],
+  knowsAbout: ['Next.js', 'React', 'TypeScript', 'Fastify', 'Sequelize', 'PostgreSQL', 'MySQL'],
   sameAs: socials.map((s) => s.href),
 };
 

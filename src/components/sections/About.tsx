@@ -38,8 +38,8 @@ export function About() {
           </p>
           <p>
             Under the RJ Industries name I’m building <span className="text-fg">OrbitOps</span>, a multi-tenant CRM. It
-            is where my whole stack comes together: Next.js and TypeScript on the front, Fastify in the middle, and
-            Sequelize with PostgreSQL underneath.
+            is where my whole stack comes together: Next.js and React on the front, Fastify in the middle, and
+            Sequelize with MySQL underneath.
           </p>
 
           <dl className="grid gap-x-8 gap-y-4 border-t border-line pt-6 text-base sm:grid-cols-2">

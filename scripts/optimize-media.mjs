@@ -16,6 +16,7 @@ const only = process.argv[2];
 // cropTop removes the recorder's browser tab strip, address bar and bookmarks, and cropBottom the
 // Windows taskbar; the original recordings exposed personal tabs, bookmarks and desktop.
 const videos = [
+  { file: 'queryloom.mp4', slug: 'queryloom', cropTop: 0, start: 0, length: 30 },
   { file: 'QuickLending.mp4', slug: 'quicklending', cropTop: 142, start: 0, length: 24 },
   { file: 'Glozic.mp4', slug: 'glozic', cropTop: 152, start: 0, length: 24 },
   { file: 'graphCommunity.mp4', slug: 'graph-community', cropTop: 142, start: 0, length: 14 },

@@ -22,9 +22,9 @@ export const projects: Project[] = [
     slug: 'orbitops',
     title: 'OrbitOps',
     summary:
-      'A multi-tenant SaaS CRM built under RJ Industries. Every company gets its own isolated workspace, and a Master Admin oversees all of them from one place.',
+      'A multi-tenant SaaS CRM by RJ Industries: one Fastify API, a CRM panel for subscribing companies and a Master Admin console for the operator team. Every company’s data stays in its own workspace.',
     role: 'Founder and full-stack developer',
-    tech: ['nextjs', 'react', 'typescript', 'fastify', 'sequelize', 'postgresql'],
+    tech: ['nextjs', 'react', 'redux', 'fastify', 'sequelize', 'mysql'],
     categories: ['SaaS', 'Full-stack'],
     links: { caseStudy: '/projects/orbitops' },
     featured: true,
@@ -37,6 +37,7 @@ export const projects: Project[] = [
     tech: [],
     categories: ['Full-stack'],
     links: { live: 'https://queryloom.com' },
+    media: { video: '/media/projects/queryloom.mp4', poster: '/media/projects/queryloom.webp' },
   },
   {
     slug: 'quicklending',
