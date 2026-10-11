@@ -451,8 +451,7 @@ Implemented 2026-10-11 on branch `redesign`. Not deployed.
 
 ### Content Raj should review
 - **Skill levels** (Daily / Comfortable / Familiar) and their one-line "used for" text in `src/data/skills.ts`. Claude assigned these from the resume and the stack Raj stated.
-- **OrbitOps case study:** it only states confirmed facts (multi-tenant SaaS CRM, Master Admin role, the stack). The "Why this stack" reasons were written by Claude. The Modules, Challenges and Results sections were left out until Raj provides real content.
-- **The example request flow** (`GET /api/contacts`, `tenant_id` filter) is labelled as a simplified example. It assumes tenant scoping by a `tenant_id` column.
+- **OrbitOps case study:** now built from Raj's own case study (see Change Request History). The example request (`GET /api/leads`, `organization_id` filter) is labelled as simplified; the column name is illustrative.
 
 ### Known limitations and follow-ups
 - **Home mobile LCP:** Lighthouse's simulation puts it at 3.1s, above the 2.5s target. The hero text is the LCP element, and a real throttled run measured about 1.2s. The remaining cost is mostly hydration work on a long page (about 1,000 DOM nodes).
@@ -463,3 +462,4 @@ Implemented 2026-10-11 on branch `redesign`. Not deployed.
 - **Old build folder:** the old `build/` folder from Create React App is still on disk (git-ignored, about 228 MB) and can be deleted.
 
 ## Change Request History
+- 2026-10-11 | Stack layer panel fixed (it vanished after switching layers); QueryLoom recording added; OrbitOps case study rebuilt from Raj's own write-up, and OrbitOps facts corrected to MySQL, Redux Toolkit and Zod (not PostgreSQL/TypeScript) across the site | Bug report plus new source material from Raj | Raj Maisuriya

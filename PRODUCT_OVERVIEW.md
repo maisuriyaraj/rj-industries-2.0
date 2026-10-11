@@ -36,9 +36,10 @@ The site is one long page plus a case study.
 5. **Experience**: a timeline of roles and education.
 6. **Contact**: email (with a copy button), social links, and a contact form
    once a form key is configured.
-7. **OrbitOps case study** (its own page): the problem, how tenants and the
-   Master Admin fit together, how a request stays inside its tenant, and why
-   this stack.
+7. **OrbitOps case study** (its own page): the three codebases, the problem,
+   the Main Panel and Master Admin features, the architecture (two Next.js
+   panels, one Fastify API, MySQL), security decisions, lessons learned, and
+   what's next.
 
 Extras: light and dark themes, a command palette (Ctrl/Cmd+K), and a small
 easter egg for visitors who type "orbit".

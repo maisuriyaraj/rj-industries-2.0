@@ -12,7 +12,7 @@
 ## Content (`src/data/`)
 - Edit content here, not in components: `site.ts` (name, links, hero roles), `skills.ts`, `projects.ts`, `experience.ts`, `stack.ts` (layers and the example request flow), `tech.ts` (tech names and icons).
 - Experience durations are calculated by `formatPeriod()` at build time, so ongoing roles update on each deploy.
-- Do not invent facts about OrbitOps or other projects; the case study only states what Raj has confirmed.
+- Do not invent facts about OrbitOps or other projects. OrbitOps facts come from Raj's case study in `src/data/orbitops.ts`: it runs on MySQL (not PostgreSQL) with Redux Toolkit and Zod.
 
 ## Media
 - Originals go in `media-src/` (git-ignored). `npm run media` (`scripts/optimize-media.mjs`, needs ffmpeg) writes optimised files to `public/`: project videos and posters, portrait, logos, favicons, `og.png`.
