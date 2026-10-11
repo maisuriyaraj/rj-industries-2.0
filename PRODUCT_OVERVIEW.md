@@ -11,52 +11,52 @@ It is live at https://raj-maisuriya.web.app/ (hosted on Firebase).
 ## Who is it for?
 
 - Recruiters and hiring managers looking at Raj as a possible employee.
-- Clients looking for a freelance web developer (the profile includes a
-  "Why Hire Me?" section offering 40 hours per week and daily updates).
+- Clients looking for a freelance web developer (the contact section promises
+  daily progress updates on freelance work).
 - Other developers or contacts who want to see Raj's work or get in touch.
 
 ## What can a visitor do?
 
-The site has three pages and a shared header and footer.
+The site is one long page plus a case study.
 
-1. **Home**: a short welcome ("Hey, I am Raj Maisuriya, Full Stack Web
-   Developer, Bring your ideas to life!") with an animated illustration and a
-   button that leads to the profile.
-2. **Profile**: an online CV. It shows:
-   - Name, location, and a one-line role summary
-   - A profile photo
-   - Education (BCA, Veer Narmad South Gujarat University, 2021 to 2024)
-   - Skills shown as logos (HTML, CSS, Tailwind, Bootstrap, React, Angular,
-     Next.js, Node.js, Express, MongoDB)
-   - Work experience (Constantsys, then Zluck Solutions, current)
-   - A longer description of services offered and reasons to hire
-   - A side panel with contact details and social links (LinkedIn, X/Twitter,
-     GitHub, YouTube, email, phone) and a button to the portfolio
-3. **Portfolio**: a list of past projects. Each project has a screen-recording
-   video, a short description, and the logos of the technologies used.
-   Projects include a US lending platform (QuickLending), a low-code website
-   builder (Glozic), a Stack Overflow style community (Graph Community), an
-   e-commerce site, a real-time chat app, a movie ticket booking system, and a
-   finance website clone.
+1. **Hero**: who Raj is, a rotating line of roles, and buttons to view OrbitOps,
+   see projects, or download the CV.
+2. **About**: a short story (BCA in Surat, Constantsys, Zluck Solutions, MCA,
+   OrbitOps), a portrait and quick facts.
+3. **Stack**: an interactive diagram of Raj's three layers (Next.js / React /
+   TypeScript, Fastify, Sequelize / PostgreSQL). Visitors can click a layer to
+   see what was built with it, or press "Send a request" to watch a request
+   travel through the stack and back. Below it, skill cards can be filtered by
+   Frontend, Backend, Database and Tools.
+4. **Projects**: filterable cards. OrbitOps is the featured project. Other
+   projects (QueryLoom, QuickLending, Glozic, Graph Community, a real-time chat
+   app, an online bookstore, a movie booking system, a Muthoot Finance clone)
+   show a silent video preview on hover and a full demo on click, with live
+   links where they exist.
+5. **Experience**: a timeline of roles and education.
+6. **Contact**: email (with a copy button), social links, and a contact form
+   once a form key is configured.
+7. **OrbitOps case study** (its own page): the problem, how tenants and the
+   Master Admin fit together, how a request stays inside its tenant, and why
+   this stack.
 
-The header also has a **Download CV** button that downloads Raj's resume as a
-PDF. On phones and small tablets, the menu becomes a full-screen slide-in panel.
+Extras: light and dark themes, a command palette (Ctrl/Cmd+K), and a small
+easter egg for visitors who type "orbit".
 
 ## How is it different from similar sites?
 
-- **Video instead of screenshots.** Every portfolio project is shown as a
-  short screen recording, so visitors see the work actually running.
-- **A full CV in the browser.** The profile page covers education, skills,
-  experience, services, and contact details, so visitors do not need to open
-  the PDF.
-- **Simple and fast to read.** There are only three pages, no login, no
-  backend, and no forms. All content is written into the site itself.
+- **The design explains the stack.** Instead of a list of logos, visitors can
+  click through the layers and watch a request move from UI to database.
+- **Video instead of screenshots.** Projects preview as short screen
+  recordings, which only load when someone asks for them.
+- **A real product at the centre.** OrbitOps, a multi-tenant SaaS CRM, gets
+  its own case study.
 
 ## Other useful facts
 
-- All content (text, projects, skills, experience, contact links) lives
-  directly inside the page files. There is no admin panel or database.
-  Updating the site means editing the code and redeploying.
-- The look is clean and light: white and light grey backgrounds with a bright
-  blue accent colour, the Poppins font for text, and the Audiowide font for
-  the logo.
+- All content (text, projects, skills, experience, contact links) lives in
+  typed data files in the code. There is no admin panel or database.
+  Updating the site means editing those files and redeploying.
+- The look is a light or dark "blueprint" style: a faint grid, a bright blue
+  accent, one colour per stack layer, the Inter font for text, JetBrains Mono
+  for labels, and Audiowide for the logo.

@@ -1,39 +1,41 @@
 # CLAUDE.md
 
 ## What This Is
-RJ INDUSTRIES is Raj Maisuriya's personal portfolio website: a three-page site (Home, Profile, Portfolio) that presents him as a full stack web developer to recruiters and clients, with an online CV, project screen recordings, and a downloadable resume. All content is hardcoded in the page files; there is no backend. Full context: PRODUCT_OVERVIEW.md.
+RJ INDUSTRIES is Raj Maisuriya's personal portfolio: a single-page site (Hero, About, Stack, Projects, Experience, Contact) plus an OrbitOps case study, built so the design itself shows his stack (Next.js, React, TypeScript, Fastify, Sequelize, PostgreSQL). All content is in typed data files; there is no backend. Full context: PRODUCT_OVERVIEW.md.
 
 ## Stack
-- React 18 single-page app, built with Create React App (react-scripts 5)
-- React Router 6 (`HashRouter`)
-- Tailwind CSS 3 plus small plain CSS files
-- Bootstrap Icons, react-helmet (page title and meta tags)
-- Firebase Hosting (serves `build/`)
+- Next.js 15 (App Router) + React 19 + TypeScript, static export (`output: 'export'`)
+- Tailwind CSS 4 with CSS-variable design tokens (no tailwind.config.js)
+- lucide-react (UI icons), simple-icons (tech logos), cmdk (command palette)
+- Firebase Hosting (serves `out/`)
 
 ## Key Commands
-- `npm start`: run locally at http://localhost:3000
-- `npm run build`: production build into `build/`
-- `npm test`: Jest tests (the only test is the stock CRA one and currently fails)
-- `firebase deploy`: publish `build/` (Firebase CLI, installed separately)
+- `npm run dev`: local dev server at http://localhost:3000
+- `npm run build`: static export into `out/`
+- `npm run typecheck` / `npm run lint`: must pass before committing
+- `npm run media`: re-optimise videos, images, favicons and OG image from `media-src/` (needs ffmpeg)
+- `npm run build && firebase deploy --only hosting`: publish (only with the owner's go-ahead)
 
 ## Folder Map
-- `src/`: all app code; pages in `Home/`, `Profile/`, `Portfolio/`, shared pieces in `components/`, media in `assets/`
-- `public/`: `index.html` template, favicon, manifest
-- `build/`: generated build output (git-ignored, do not edit)
-- `.firebase/`: Firebase CLI cache (do not edit)
-- `specs/`: SDD specs, workflow, template, and index
-- `.claude/`: rules and SDD skills for Claude Code
+- `src/app/`: routes, layout, metadata, sitemap/robots/manifest, `globals.css` (design tokens)
+- `src/components/`: `layout/`, `ui/`, `sections/`, `stack/`, `projects/`, `palette/`
+- `src/data/`: all site content (profile, skills, projects, experience, stack)
+- `src/lib/`: theme script, small hooks, `cn`
+- `public/`: optimised media, icons, OG image, resume
+- `scripts/`: media optimisation script; `media-src/`: original media (git-ignored)
+- `docs/screenshots/`: before/after screenshots of the redesign
+- `specs/`, `SPEC.md`: SDD specs; `.claude/`: rules and SDD skills
 
 ## Naming Rules
-- Brand is written "RJ INDUSTRIES" in the header logo but "RjIndustries" in the footer and "rj-industries" in package.json. The site is about the person, Raj Maisuriya. Keep each existing spelling where it already is.
+- The brand is written "RJ INDUSTRIES" (logo wordmark "RJINDUSTRIES") and the package is "rj-industries". The site is about the person, Raj Maisuriya. Keep each existing spelling where it already is.
 
 ## Undocumented Architecture
 This file is read in full every session, every line here is a fixed cost paid on every task. Keep this section lean; a feature-specific invariant belongs in that feature's own spec, not here.
-- `HashRouter` is deliberate: Firebase Hosting has no single-page-app rewrite, so browser-style URLs would 404 on refresh. See `.claude/rules/project-structure.md`.
-- Several Tailwind classes in use (`text-primary`, `text-secondary`, `hero-gradient-*`) are not defined in `tailwind.config.js` and do nothing. See `.claude/rules/design-system.md`.
+- Static export only: no API routes, server actions or image optimisation. Anything dynamic must run in the browser. See `.claude/rules/project-structure.md`.
+- An inline script in `<head>` (`src/lib/theme.ts`) sets the theme before paint, marks `<html class="js">` for scroll reveals, and forwards old `/#/profile` links. Keep it tiny and dependency-free.
 
 ## Rules
-Rules live in `.claude/rules/`: `code-style.md` (team rules, React patterns), `design-system.md` (design and theming: colours, fonts, layout), `project-structure.md` (pages, routing, content, assets, deploy). Specs live in `specs/` (see `specs/INDEX.md`).
+Rules live in `.claude/rules/`: `code-style.md` (team rules, TypeScript and React patterns), `design-system.md` (design and theming: tokens, fonts, layout), `project-structure.md` (routes, content, media, deploy). Specs live in `specs/` (see `specs/INDEX.md`).
 
 ## Session Startup
 At the start of every session:

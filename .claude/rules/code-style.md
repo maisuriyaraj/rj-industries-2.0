@@ -3,34 +3,29 @@
 ## Team rules (always apply)
 - Never implement a Full Lane change without an approved spec. See specs/WORKFLOW.md for the Fast Lane exception.
 - If an implementation needs to deviate from its spec, stop and discuss before continuing.
-- Do not rename existing variables, functions, files, or folders to match product names. Follow whatever name already exists in that file (for example `x` in `.map((x) => ...)`, `QL`, `GL`, `myProfile`).
+- Do not rename existing variables, functions, files, or folders to match product names. Follow whatever name already exists in that file.
 - Code comments explain why, not where. Never reference a spec filename, CR number, or line number in a comment. Explain the rule inline in plain English, one to four lines maximum.
 - AI prompts: this repo has none today. If any are added, each must be versioned inside that feature's spec. No hardcoded prompts.
 
 ## Language and files
-- Plain JavaScript with JSX. No TypeScript, no PropTypes. Do not introduce either without a spec.
-- Components are `.jsx`; entry and bootstrap files (`src/index.js`, `src/App.js`) are `.js`.
-- One component per folder, in `index.jsx`, using `export default function Name() {}`.
-- Import React at the top (`import React, { useEffect } from 'react';`), then router, then assets, then local components/CSS.
-- Use single quotes in JS imports; JSX attribute strings use double quotes (existing mixed usage is fine, do not reformat untouched lines).
+- TypeScript everywhere (`strict`, `noUncheckedIndexedAccess`). No `any`; no `.js`/`.jsx` app code.
+- Components: PascalCase file per component, named export (`export function Hero()`). Route files in `src/app/` use Next's default exports.
+- Imports use the `@/` alias for anything under `src/`.
+- Content lives in typed `src/data/*.ts` files, never hardcoded inside components (see project-structure.md).
 
-## React patterns
-- Function components with hooks only. No class components.
-- Every page component scrolls to the top on mount with:
-  `useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, []);`
-  New pages must do the same.
-- Lists rendered with `.map()` need a `key`. Prefer a stable value (`x.name`) over the index for new code.
-- Images and videos must be imported as modules from `src/assets/...` (`import QL from '../assets/portfolioVideos/QuickLending.mp4'`), never referenced by a string path.
-- Every new `<img>` needs a meaningful `alt` text.
-- Internal navigation uses `<Link to="...">` from react-router-dom, never `<a href="/...">`. External links use `<a href="https://...">`.
+## React and Next.js
+- Server components by default. Add `'use client'` only for state, effects or browser APIs, and keep client components small (for example `TypedRole`, `ProjectMedia`).
+- The site is a static export: no API routes, no server actions, no `next/image` optimisation (`images.unoptimized`). Anything dynamic must work in the browser alone.
+- Internal links use `next/link`; external links use `components/ui/ExternalLink` (new tab, `rel="noopener noreferrer"`, screen-reader hint).
+- Every interactive element is a real `<button>` or `<a>`, reachable by keyboard, with an accessible name. Icons are `aria-hidden`.
+- Every image has meaningful `alt` text, or `alt=""` when purely decorative.
+- One `<h1>` per page; headings never skip a level.
+- Animations must respect `prefers-reduced-motion` (global CSS rule plus `useReducedMotion` in `src/lib`). Content must stay visible without JavaScript.
+- No animation library: CSS transitions and keyframes only. `motion` was removed to keep the home page light.
 
-## Error handling and async
-- There is no backend, no data fetching, and no async code. If a future feature adds any, its spec must define how loading and errors are shown.
-
-## Testing
-- `npm test` runs Jest via react-scripts. The only test, `src/App.test.js`, is the default Create React App test and fails (it looks for "learn react"). Do not rely on it as a signal; fix or replace it only through a spec.
+## Checks before committing
+- `npm run typecheck`, `npm run lint` and `npm run build` must all pass.
 
 ## Must never
-- Never commit secrets or `.env` files (none exist today; `.gitignore` already covers `.env.*.local`).
-- Never edit anything in `build/` or `node_modules/` by hand.
-- Never run `npm run eject`.
+- Never commit secrets or `.env*` files. `NEXT_PUBLIC_WEB3FORMS_KEY` is public by design but still lives in the build environment, not in code.
+- Never edit `out/`, `.next/`, `node_modules/` or `media-src/` contents by hand.

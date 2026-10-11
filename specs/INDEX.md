@@ -13,4 +13,4 @@ Group | File Path | Description | Status
 
 ## Specs
 
-redesign | SPEC.md | Full portfolio redesign: Next.js + TS static export, design system, stack showcase, OrbitOps case study, UI bug fixes | Approved
+redesign | SPEC.md | Full portfolio redesign: Next.js + TS static export, design system, stack showcase, OrbitOps case study, UI bug fixes | Implemented

@@ -1,7 +1,7 @@
 # Spec: Portfolio Redesign (Stack Showcase + Bug Fixes)
 
 ## Status
-Approved
+Implemented
 
 ## Type
 Improvement (redesign, bug fixes, and framework migration)
@@ -346,53 +346,53 @@ Work happens on a branch `redesign`, one small commit per task or less. Each tas
 3. Screenshots at 375, 768 and 1440 wide, saved to `docs/screenshots/after/`
 
 **P0: Foundation and bug fixes (keep today's look, fix the bugs)**
-- [ ] T1 Scaffold Next.js 15 + TS + Tailwind 4 static export. Update `firebase.json` (out, cleanUrls, headers, 404). Update `.gitignore`. `npm run build` produces `out/`.
-- [ ] T2 Media pipeline:
+- [x] T1 Scaffold Next.js 15 + TS + Tailwind 4 static export. Update `firebase.json` (out, cleanUrls, headers, 404). Update `.gitignore`. `npm run build` produces `out/`.
+- [x] T2 Media pipeline:
   - Re-encode and crop the 7 used videos (B1, B21)
   - Generate posters
   - Optimise the portrait, logos and favicons
   - Delete unused assets and the old resume (B25)
   - Stop tracking `.firebase/`
-- [ ] T3 Port the current content into typed `src/data/*.ts` and plain components. This fixes:
+- [x] T3 Port the current content into typed `src/data/*.ts` and plain components. This fixes:
   - B5 (real links), B6 (accessible mobile menu), B7 (alt text), B8 (headings), B9 (landmarks)
   - B13, B17, B18 (copy, after Raj reviews), B20 (project links), B22 (phone link), B26 (external links)
   - Result: a deployable checkpoint with all P0 bugs fixed.
-- [ ] T4 SEO base (B10): per-page metadata, canonical, OG/Twitter tags, static OG image, `sitemap.ts`, `robots.ts`, `manifest.ts`, favicons, JSON-LD Person, old hash-URL redirect. Plus B24 cache headers.
+- [x] T4 SEO base (B10): per-page metadata, canonical, OG/Twitter tags, static OG image, `sitemap.ts`, `robots.ts`, `manifest.ts`, favicons, JSON-LD Person, old hash-URL redirect. Plus B24 cache headers.
 
 **P1: Design system**
-- [ ] T5 Tokens in `globals.css` (light/dark), Tailwind theme mapping, `next/font` (B23), and a contrast-check script (B4).
-- [ ] T6 Theme toggle with no flash (F6, fixes B11). UI primitives: `Container` (B15), `Section`, `Button`, `Badge`, `Card`, `Chip`, `SkipLink`.
-- [ ] T7 New header (sticky, active section, mobile menu, B3), footer, scroll progress, reveal helper (F7).
+- [x] T5 Tokens in `globals.css` (light/dark), Tailwind theme mapping, `next/font` (B23), and a contrast-check script (B4).
+- [x] T6 Theme toggle with no flash (F6, fixes B11). UI primitives: `Container` (B15), `Section`, `Button`, `Badge`, `Card`, `Chip`, `SkipLink`.
+- [x] T7 New header (sticky, active section, mobile menu, B3), footer, scroll progress, reveal helper (F7).
 
 **P2: Features**
-- [ ] T8 Hero (F1, fixes B14)
-- [ ] T9 About, Experience timeline and Resume (F8, fixes B16)
-- [ ] T10 Stack centrepiece with data flow (F2/F3, fixes B19)
-- [ ] T11 Projects grid with filters and previews (F4, fixes B2 by replacing the layout, and B12)
-- [ ] T12 OrbitOps case study page (F5)
-- [ ] T13 Contact form (F9)
+- [x] T8 Hero (F1, fixes B14)
+- [x] T9 About, Experience timeline and Resume (F8, fixes B16)
+- [x] T10 Stack centrepiece with data flow (F2/F3, fixes B19)
+- [x] T11 Projects grid with filters and previews (F4, fixes B2 by replacing the layout, and B12)
+- [x] T12 OrbitOps case study page (F5)
+- [x] T13 Contact form (F9)
 
 **P3: Extras**
-- [ ] T14 Command palette and Easter egg (F10)
+- [x] T14 Command palette and Easter egg (F10)
 
 **Wrap-up**
-- [ ] T15 Update the `.claude/rules/*` files, `CLAUDE.md` and `README.md` for the new stack.
-- [ ] T16 Verify: Lighthouse (mobile and desktop) on `/` and `/projects/orbitops`; the full bug checklist below; a keyboard-only pass; screenshots at 3 widths in both themes. Update this spec's Implementation Notes and set Status to Implemented.
+- [x] T15 Update the `.claude/rules/*` files, `CLAUDE.md` and `README.md` for the new stack.
+- [x] T16 Verify: Lighthouse (mobile and desktop) on `/` and `/projects/orbitops`; the full bug checklist below; a keyboard-only pass; screenshots at 3 widths in both themes. Update this spec's Implementation Notes and set Status to Implemented.
 
 ### Done checklist (quality bar)
-- [ ] No sideways scroll at 320, 375, 768, 1024, 1440 and 1920 wide, in both themes
-- [ ] Lighthouse 90 or more in all four categories on mobile and desktop for `/` and `/projects/orbitops`
-- [ ] CLS under 0.1 and LCP under 2.5s (mobile)
-- [ ] No console errors or warnings on any page
-- [ ] Every interactive element reachable by keyboard, with a visible focus ring (`--brand-strong`, 2px outline, 2px offset)
-- [ ] One `<h1>` per page, logical heading order, landmarks, skip link
-- [ ] All text meets WCAG AA contrast in both themes
-- [ ] All images have correct alt text; videos have a poster and `preload="none"`
-- [ ] Page weight of `/` under 1 MB on first load (videos excluded until a visitor plays one)
-- [ ] `sitemap.xml`, `robots.txt`, favicon, manifest, OG/Twitter tags all served correctly
-- [ ] `npm run lint`, `npm run typecheck` and `npm run build` all pass
-- [ ] Every bug B1 to B26 is fixed or explicitly noted as won't-fix with a reason
-- [ ] `firebase.json` serves `out/`; the deploy command is confirmed as `npm run build && firebase deploy` (Claude does not deploy without asking)
+- [x] No sideways scroll at 320, 375, 768, 1024, 1440 and 1920 wide, in both themes
+- [x] Lighthouse 90 or more in all four categories on mobile and desktop for `/` and `/projects/orbitops`
+- [ ] CLS under 0.1 and LCP under 2.5s (mobile). CLS is 0 everywhere and `/projects/orbitops` LCP is 2.6s, but `/` is 3.1s in Lighthouse's simulated mobile run (the real measured LCP on a throttled phone profile was about 1.2s). See Implementation Notes.
+- [x] No console errors or warnings on any page
+- [x] Every interactive element reachable by keyboard, with a visible focus ring (`--brand-strong`, 2px outline, 2px offset)
+- [x] One `<h1>` per page, logical heading order, landmarks, skip link
+- [x] All text meets WCAG AA contrast in both themes
+- [x] All images have correct alt text; videos show a lazy-loaded poster image and the `<video>` element is only created on hover or "Watch demo" (stricter than `preload="none"`)
+- [x] Page weight of `/` under 1 MB on first load (videos excluded until a visitor plays one)
+- [x] `sitemap.xml`, `robots.txt`, favicon, manifest, OG/Twitter tags all served correctly
+- [x] `npm run lint`, `npm run typecheck` and `npm run build` all pass
+- [x] Every bug B1 to B26 is fixed or explicitly noted as won't-fix with a reason
+- [x] `firebase.json` serves `out/`; the deploy command is confirmed as `npm run build && firebase deploy` (Claude does not deploy without asking)
 
 ---
 
@@ -415,6 +415,51 @@ These don't block approval. Each blocks only the task named.
 7. **Copy (T3):** OK for me to rewrite the profile text for tone and typos? You review it before it ships.
 
 ## Implementation Notes
-(Filled after implementation.)
+
+Implemented 2026-10-11 on branch `redesign`. Not deployed.
+
+### Results (Lighthouse 12.3: Performance / Accessibility / Best Practices / SEO)
+| Page | Before, mobile | After, mobile | Before, desktop | After, desktop |
+|---|---|---|---|---|
+| Home `/` | 94 / 92 / 100 / 92 | **91 / 100 / 100 / 100** | 94 / 92 / 100 / 92 | **100 / 100 / 100 / 100** |
+| Portfolio → now `/#projects` | 87 / 100 / 100 / 92 | (part of `/`) | 77 / 94 / 100 / 92 | (part of `/`) |
+| `/projects/orbitops` | (new) | **96 / 100 / 100 / 100** | (new) | **100 / 100 / 100 / 100** |
+
+- "Before" was measured on the live site. "After" was measured on the local `out/` build, served with the same `firebase.json` rules plus gzip (Firebase compresses in production).
+- **Page weight:** `/` is 374 KiB on first load, down from 8 to 11 MB on the old Portfolio page. No video downloads until a visitor hovers a card or presses "Watch demo".
+- **Media size:** used videos went from 226 MB to 9.4 MB, and the deployed folder from 228 MB to about 12 MB.
+- **Browser checks:** 36 page/width/theme combinations (3 pages × 6 widths × 2 themes) have no sideways scroll, no console errors, one `h1`, no skipped heading levels, and no images missing alt text.
+- **Interaction checks:** 19 automated checks pass: mobile menu, theme, skip link, focus rings, stack tabs and request, filters, video, palette, easter egg, old links, active nav, reduced motion, and no-JS. The contact form was tested separately with a mocked Web3Forms service (7 checks pass).
+- **Screenshots:** in `docs/screenshots/after/`.
+
+### Bug checklist
+- **Fixed:**
+  - B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13
+  - B14, B15, B16, B17, B18, B19, B20, B21, B23, B24, B25, B26
+- **B22:** the phone link was removed from the site (an open question, resolved by default). The number is still printed in the downloadable resume.
+
+### Deviations from the plan
+1. **No animation library.** `motion` was added, then removed. It weighed about 48 KB gzipped, more than double the planned 18 KB. The `domAnimation` feature set also cannot do the layout animations it was chosen for. CSS transitions and keyframes now do the packet movement and the card fade-ins. Home-page JavaScript dropped from 181 KB to 140 KB.
+2. **No "old look" checkpoint (T3).** Content went straight into the new components. Each P0 bug was fixed in the component that replaced it, rather than first rebuilding the old design.
+3. **Resume.** Raj added a new `Raj_Maisuriya_Resume_2.pdf` during the work. It is now served at `/raj-maisuriya-resume.pdf`; the 2025 and older resumes were removed.
+4. **Content added from that resume:**
+   - QueryLoom as a project (live link, no tech listed).
+   - The MCA in progress.
+   - Glozic's live link (portal.glozic.com).
+5. **Video crops.** The recordings also cut off the Windows taskbar (three of them showed it), not only the browser bar.
+6. **Commit fix.** Commit `ce500f3` described `firebase.json` changes that were not actually in it, because the file write had silently failed. Commit `adbcbe4` adds them. It also (unannounced in its message) removed the old tech-logo SVGs, the old hero illustration and `public/robots.txt`, which were replaced by simple-icons and `src/app/robots.ts`.
+
+### Content Raj should review
+- **Skill levels** (Daily / Comfortable / Familiar) and their one-line "used for" text in `src/data/skills.ts`. Claude assigned these from the resume and the stack Raj stated.
+- **OrbitOps case study:** it only states confirmed facts (multi-tenant SaaS CRM, Master Admin role, the stack). The "Why this stack" reasons were written by Claude. The Modules, Challenges and Results sections were left out until Raj provides real content.
+- **The example request flow** (`GET /api/contacts`, `tenant_id` filter) is labelled as a simplified example. It assumes tenant scoping by a `tenant_id` column.
+
+### Known limitations and follow-ups
+- **Home mobile LCP:** Lighthouse's simulation puts it at 3.1s, above the 2.5s target. The hero text is the LCP element, and a real throttled run measured about 1.2s. The remaining cost is mostly hydration work on a long page (about 1,000 DOM nodes).
+- **Contact form:** off until `NEXT_PUBLIC_WEB3FORMS_KEY` is set at build time. Until then the section shows email and social links.
+- **Poster sizes:** posters are 960px wide even on phones (Lighthouse estimates 15 to 46 KB could be saved with a 480px version).
+- **Next.js advisory:** `npm audit` reports a PostCSS advisory in the copy bundled inside Next 15. It is build-time only, processes only our own CSS, and is fixed in Next 16.
+- **Local testing:** the Firebase CLI 13.5.2 emulator crashes on Node 22, and on Windows all Firebase emulators ignore `redirects` and `headers` (superstatic builds globs with backslashes). Redirects and headers were verified with superstatic on POSIX paths. Check them again on a preview channel before the first deploy.
+- **Old build folder:** the old `build/` folder from Create React App is still on disk (git-ignored, about 228 MB) and can be deleted.
 
 ## Change Request History
