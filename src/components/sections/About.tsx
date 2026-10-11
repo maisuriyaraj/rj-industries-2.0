@@ -18,9 +18,9 @@ export function About() {
           <div aria-hidden="true" className="absolute -inset-3 -z-10 rounded-3xl border border-dashed border-line" />
           <Image
             src="/media/about/raj.webp"
-            alt="Raj Maisuriya standing on a tree-lined street in Surat, wearing sunglasses and a patterned shirt"
-            width={640}
-            height={800}
+            alt="Raj Maisuriya on a path through a pine forest, wearing sunglasses and a maroon shirt"
+            width={452}
+            height={565}
             sizes="(min-width: 768px) 320px, 90vw"
             className="h-auto w-full rounded-2xl border border-line object-cover shadow-card"
           />

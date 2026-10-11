@@ -61,9 +61,10 @@ async function optimiseImages() {
   mkdirSync(out('media', 'logos'), { recursive: true });
   mkdirSync(out('media', 'about'), { recursive: true });
 
-  await sharp(src('images', 'me2.webp'))
-    .resize({ width: 640, height: 800, fit: 'cover', position: 'top' })
-    .webp({ quality: 78 })
+  // The source is a 567px square, so crop to 4:5 at its own height instead of upscaling.
+  await sharp(src('images', 'me.png'))
+    .resize({ width: 452, height: 565, fit: 'cover', position: 'centre' })
+    .webp({ quality: 82 })
     .toFile(out('media', 'about', 'raj.webp'));
 
   const logos = [
