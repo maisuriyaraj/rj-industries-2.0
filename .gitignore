@@ -24,3 +24,15 @@ yarn-error.log*
 
 # personal Claude Code overrides
 CLAUDE.local.md
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# firebase cli cache
+/.firebase/
+
+# original (unoptimised) media, see scripts/optimize-media.mjs
+/media-src/
