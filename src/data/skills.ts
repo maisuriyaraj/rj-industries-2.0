@@ -21,9 +21,11 @@ export const skills: Skill[] = [
   { tech: 'mysql', category: 'Database', level: 'Comfortable', usedFor: 'The OrbitOps database: 18 models, 19 migrations' },
   { tech: 'postgresql', category: 'Database', level: 'Comfortable', usedFor: 'Relational data modelling and SQL' },
   { tech: 'sequelize', category: 'Database', level: 'Comfortable', usedFor: 'Models, associations and versioned migrations' },
+  { tech: 'mongodb', category: 'Database', level: 'Comfortable', usedFor: 'Document data for Node and Express apps' },
+  { tech: 'mongoose', category: 'Database', level: 'Comfortable', usedFor: 'Schemas, models and validation on MongoDB' },
   { tech: 'git', category: 'Tools', level: 'Daily', usedFor: 'Branching, reviews and open-source work' },
   { tech: 'firebase', category: 'Tools', level: 'Comfortable', usedFor: 'Hosting this portfolio' },
   { tech: 'vercel', category: 'Tools', level: 'Comfortable', usedFor: 'Deploying Next.js projects' },
 ];
 
-export const alsoWorkedWith: TechId[] = ['angular', 'express', 'mongodb', 'socketio', 'bootstrap', 'mui', 'render'];
+export const alsoWorkedWith: TechId[] = ['angular', 'express', 'socketio', 'bootstrap', 'mui', 'render'];

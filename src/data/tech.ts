@@ -8,6 +8,7 @@ import {
   siGit,
   siHtml5,
   siMongodb,
+  siMongoose,
   siMui,
   siMysql,
   siNextdotjs,
@@ -39,6 +40,7 @@ export type TechId =
   | 'postgresql'
   | 'sequelize'
   | 'mongodb'
+  | 'mongoose'
   | 'mysql'
   | 'angular'
   | 'redux'
@@ -67,6 +69,7 @@ export const tech: Record<TechId, Tech> = {
   postgresql: { id: 'postgresql', name: 'PostgreSQL', icon: siPostgresql },
   sequelize: { id: 'sequelize', name: 'Sequelize', icon: siSequelize },
   mongodb: { id: 'mongodb', name: 'MongoDB', icon: siMongodb },
+  mongoose: { id: 'mongoose', name: 'Mongoose', icon: siMongoose },
   mysql: { id: 'mysql', name: 'MySQL', icon: siMysql },
   angular: { id: 'angular', name: 'Angular', icon: siAngular },
   redux: { id: 'redux', name: 'Redux', icon: siRedux },
