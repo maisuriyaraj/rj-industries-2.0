@@ -18,6 +18,7 @@ export const skills: Skill[] = [
   { tech: 'html', category: 'Frontend', level: 'Daily', usedFor: 'Semantic, accessible markup' },
   { tech: 'fastify', category: 'Backend', level: 'Comfortable', usedFor: 'The OrbitOps API: a Fastify 5 modular monolith' },
   { tech: 'node', category: 'Backend', level: 'Comfortable', usedFor: 'APIs, scripts and real-time services' },
+  { tech: 'express', category: 'Backend', level: 'Comfortable', usedFor: 'REST APIs for Node and MongoDB apps' },
   { tech: 'mysql', category: 'Database', level: 'Comfortable', usedFor: 'The OrbitOps database: 18 models, 19 migrations' },
   { tech: 'postgresql', category: 'Database', level: 'Comfortable', usedFor: 'Relational data modelling and SQL' },
   { tech: 'sequelize', category: 'Database', level: 'Comfortable', usedFor: 'Models, associations and versioned migrations' },
@@ -28,4 +29,4 @@ export const skills: Skill[] = [
   { tech: 'vercel', category: 'Tools', level: 'Comfortable', usedFor: 'Deploying Next.js projects' },
 ];
 
-export const alsoWorkedWith: TechId[] = ['angular', 'express', 'socketio', 'bootstrap', 'mui', 'render'];
+export const alsoWorkedWith: TechId[] = ['angular', 'socketio', 'bootstrap', 'mui', 'render'];
